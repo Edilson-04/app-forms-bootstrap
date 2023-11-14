@@ -7,18 +7,18 @@
 
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Ingrese Numero:</label>
-            <input type="number" class="form-control" id="txtnumero1">
+            <input type="number" class="form-control" id="txtnumero1" [(ngModel)]="objSuma.numero1">
         </div>
 
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Ingrese Numero:</label>
-            <input type="number" class="form-control" id="txtnumero2">
+            <input type="number" class="form-control" id="txtnumero2" [(ngModel)]="objSuma.numero2">
         </div>
 
-        <button type="button" class="btn btn-primary">Calcular</button>
+        <button type="button" (click)="calcularSuma()" class="btn btn-primary">Calcular</button>
 
-        <div class="alert alert-primary" role="alert">
-            A simple primary alert—check it out!
+        <div class="alert alert-primary" role="alert" *ngIf="mostraresultado">
+            La suma es: {{objSuma.resultado}}
         </div>
 
     </div>

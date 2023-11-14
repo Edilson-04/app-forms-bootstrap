@@ -1,1 +1,41 @@
-<p>form-calculo-imc works!</p>
+<div class="card">
+    <div class="card-header">
+        Formulario Bootstrap
+    </div>
+    <div class="card-body">
+        <div class="mb-3">
+            <label for="txtnombre" class="form-label">Ingrese Nombre:</label>
+            <input type="text" class="form-control" id="txtnombre" [(ngModel)]="objImcc.nombre">
+        </div>
+        <div class="mb-3">
+            <label for="txttalla" class="form-label">Ingrese Talla:</label>
+            <input type="number" class="form-control" id="txttalla" [(ngModel)]="objImcc.talla">
+        </div>
+        <div class="mb-3">
+            <label for="txtpeso" class="form-label">Ingrese Peso:</label>
+            <input type="number" class="form-control" id="txtpeso" [(ngModel)]="objImcc.peso">
+        </div>
+
+        <button type="button" (click)="calcularImc()" class="btn btn-primary">CALCULAR</button>
+
+        <div class="alert alert-primary" role="alert" *ngIf="mostrarResultado">
+            El valor de IMC es: {{objImcc.resultado}}
+        </div>
+
+        <hr />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">paciente</th>
+                    <th scope="col">Valor IMC</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let paciente of listaPacientes">
+                    <td>{{paciente.nombre}}</td>
+                    <td>{{paciente.imc}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

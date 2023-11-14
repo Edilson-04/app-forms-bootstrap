@@ -1,1 +1,16 @@
-<p>form-lista-alumnos works!</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">nombre</th>
+            <th scope="col">apellido</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let alumno of listaAlumnos">
+            <td>{{alumno.id}}</td>
+            <td>{{alumno.nombre}}</td>
+            <td>{{alumno.apellido}}</td>
+        </tr>
+    </tbody>
+</table>
